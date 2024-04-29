@@ -2,7 +2,9 @@
 
 namespace Napp\Salesforce;
 
-use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Psr7;
+use GuzzleHttp\Exception\ClientException;
+//use GuzzleHttp\Exception\GuzzleException;
 use Napp\Salesforce\Exceptions\AuthenticationException;
 use Napp\Salesforce\Exceptions\RequestException;
 
@@ -369,6 +371,7 @@ class Client
      */
     private function makeRequest($method, $url, $data)
     {
+
         try {
             $response = $this->guzzleClient->request($method, $url, $data);
 
