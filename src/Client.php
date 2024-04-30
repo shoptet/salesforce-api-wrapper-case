@@ -2,7 +2,7 @@
 
 namespace Napp\Salesforce;
 
-use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Exception\ClientException;
 use Napp\Salesforce\Exceptions\AuthenticationException;
 use Napp\Salesforce\Exceptions\RequestException;
 
@@ -377,8 +377,9 @@ class Client
             }
 
             return \GuzzleHttp\json_decode($response->getBody(), true);
-        } catch (GuzzleException $e) {
-            if (false === $e->hasResponse()) {
+        } catch (ClientException $e) {
+
+            if (false === $e->getResponse()) {
                 throw RequestException::withoutResponseError($e->getMessage(), $e, $e->getCode());
             }
 
