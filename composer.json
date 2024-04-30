@@ -1,8 +1,8 @@
 {
-  "name": "napp/salesforce-api",
+  "name": "shoptet/salesforce-api-wrapper-case",
   "description": "A library for interacting with the Salesforce REST API and managing the OAuth flow",
   "keywords": ["salesforce", "rest", "api", "oauth2"],
-  "homepage": "https://github.com/napp/salesforce-api-wrapper",
+  "homepage": "https://github.com/shoptet/salesforce-api-wrapper-case",
   "license": "MIT",
   "require": {
     "ext-json": "*",
